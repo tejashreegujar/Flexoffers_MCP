@@ -2,9 +2,7 @@ from prefect import flow, task
 from Program_Tool import ProgramTool
 from dotenv import load_dotenv
 import os
-# -----------------------------
-# Tool Logic (same as before)
-# -----------------------------
+
 # Load env variables
 load_dotenv()
 
@@ -27,4 +25,4 @@ def run_program_flow(program_id: int = 127):
 
 
 if __name__ == "__main__":
-    print(run_program_flow(127))
+    run_program_flow()
