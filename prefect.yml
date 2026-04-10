@@ -1,0 +1,22 @@
+name: program-flow
+
+prefect-version: 3
+
+build: null
+
+push: null
+
+pull:
+  - prefect.deployments.steps.set_working_directory:
+      directory: .
+
+deployments:
+  - name: program-deployment
+    entrypoint: mcp_flow.py:run_program_flow
+    work_pool:
+      name: default
+    parameters:
+      program_id: 127
+    requirements:
+      - requests
+      - python-dotenv
