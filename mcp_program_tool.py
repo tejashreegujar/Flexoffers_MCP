@@ -9,12 +9,12 @@ API_KEY = os.getenv("FLEX_API_KEY")
 tool = ProgramTool(API_KEY)
 
 @mcp.tool()
-def get_program(program_id: int):
+async def get_program(program_id: int):
     """
     Fetch program details using program ID
     """
     print(f"📞 Fetching program: {program_id}")
-    return tool.get_program(program_id)
+    return await tool.get_program(program_id)
 
 if __name__ == "__main__":
     print("✅ MCP running... waiting for requests")
